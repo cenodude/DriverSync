@@ -23,7 +23,7 @@ This script is shared as-is, with absolutely NO guarantees. It’s a personal pr
 ### How to Use It
 1. Run the script by double-clicking it, or open a terminal and type:
    ```
-   python tags_sync.py
+   python DriverSync.py
    ```
 2. A window will pop up. (hopefully)
 3. If needed, use the buttons to select your iOverlay and CrewChief files. If you see two lovely green checks, that means the files are already in the default locations and ready to go.
@@ -31,7 +31,7 @@ This script is shared as-is, with absolutely NO guarantees. It’s a personal pr
 5. Check the status updates in the app to see what’s going on.
 
 ## Need Help?
-Logs are saved in `driver_tags_sync.log`. Check this file if something’s not working right. It’ll show you what happened and why.
+Logs are saved in `DriverSync.log`. Check this file if something’s not working right. It’ll show you what happened and why.
 
 If you’re still stuck, reach out to me in Discord. Just keep in mind this isn’t an official tool, so support might be limited.
 
