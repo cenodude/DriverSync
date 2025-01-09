@@ -30,6 +30,8 @@ This script is an independent, third-party tool intended for use with iOverlay a
 
 ### Installation
 
+- Install Python from the Microsoft Store (Windows 10 or later) or http://www.python.org/downloads
+
 #### Running the Python Script
 
 1. Run the application in GUI mode:
