@@ -1,38 +1,99 @@
-# DriverSync v1.0
+# DriverSync
 
-## What's This Tool About?
-DriverSync is a handy little python script that helps you keep your driver tags in sync between iOverlay (settings.dat) and CrewChief (iracing_reputations.json). It makes sure the tags you use in one app show up in the other. No more juggling or manual edits!
+DriverSync is a python-based application designed to synchronize your drivers data between iOverlay and CrewChief. DriverSync ensures smooth synchronization while maintaining data integrity. 
 
-The script is still in its very early stages of development and primarily intended for personal use. However, if you'd like to give it a try, feel free!
+---
 
-## A Heads-Up (Disclaimer)
-This script is shared as-is, with absolutely NO guarantees. It’s a personal project and **NOT** officially connected to CrewChief nor iOverlay. Use it at your own risk.
+## Features
 
-### Before You Start
-- Always back up your files just in case.
-- It directly edits your files, so double-check the results before you rely on them.
-- You need administrative rights to execute this script; otherwise, the files cannot be modified.
+- **Synchronization:** Bidirectional syncing of driver tags and reputations between iOverlay (`settings.dat`) and CrewChief (`iracing_reputations.json`).
+- **Backup:** Automatic creation of timestamped backups for data safety.
+- **Customizable Settings:** Configure sync paths, update behavior, and more through the settings dialog.
+- **User-Friendly GUI:** Dark-themed interface with real-time logs
+- **Logging:** logs saved to `DriverSync.log` for debugging and tracking.
+- **Automatic Dependency Management:** Installs required Python modules automatically.
+- **Silent mode** Once you’ve completed your initial configuration in the GUI, you can enable the Silent mode parameter.
+- 
+---
 
-### What You Need
-- **Python**: Make sure Python 3.x is installed on your computer.
-- **Dependencies?** Don’t worry, DriverSync will grab any missing modules for you.
+## Disclaimer
+This script is an independent, third-party tool intended for use with iOverlay and CrewChief. It is not affiliated with, endorsed by, or supported by iOverlay, CrewChief, or their respective owners. Use of this script is at your own risk, and no warranty—express or implied—is provided. The author assumes no responsibility for any damage, loss, or other issues arising from its use.
 
-### How to Set It Up
-1. Download the script and put it in a folder.
+## Getting Started
 
-### How to Use It
-1. Run the script by double-clicking it, or open a terminal and type:
+### Prerequisites
+
+- For running the Python script:
+  - Python 3.8+
+  - Required modules: `PyQt5`
+
+### Installation
+
+#### Running the Python Script
+
+1. Run the application in GUI mode:
+   ```bash
+   python DriverSync.py 
    ```
-   python DriverSync.py
+
+2. Run the application in SILENT mode:
+   ```bash
+   python DriverSync.py --run
    ```
-2. A window will pop up. (hopefully)
-3. If needed, use the buttons to select your iOverlay and CrewChief files. If you see two lovely green checks, that means the files are already in the default locations and ready to go.
-4. Hit the `Start Synchronization` button.
-5. Check the status updates in the app to see what’s going on.
+Once you’ve completed the initial GUI configuration, you can run DriverSync in silent mode, which allows you to schedule the script for automatic execution.
 
-## Need Help?
-Logs are saved in `DriverSync.log`. Check this file if something’s not working right. It’ll show you what happened and why.
+---
 
-If you’re still stuck, reach out to me in Discord. Just keep in mind this isn’t an official tool, so support might be limited.
+## Usage
 
-Enjoy syncing your driver tags.
+1. Launch the application.
+2. Configure file paths for iOverlay and CrewChief data in the Settings dialog if needed. DriverSync will automatically look for the default paths of iOverlay and CrewChief.
+3. Click "Sync Now" to start the synchronization process.
+
+---
+
+## Backup
+
+Backups are stored in the `Backup` folder with filenames including timestamps for easy identification. Backups ensure data safety before synchronization.
+
+---
+
+## Configuration
+
+The application uses `config.json` to store default settings:
+
+```json
+{
+  "ioverlay_settings_path": "<default_path_to_settings.dat>",
+  "crewchief_reputations_path": "<default_path_to_iracing_reputations.json>",
+  "update_existing_entries": false,
+  "sync_behavior": "Additive Only"
+}
+```
+
+Please avoid making manual changes; instead, use the DriveSync settings dialog.
+
+---
+
+## OPTIONAL: Building the Executable in Windows
+
+Use `PyInstaller` to create a standalone executable:
+
+```bash
+pip install pyinstaller
+pyinstaller --onefile --noconsole DriverSync.py
+```
+
+The executable will be available in the `dist` folder.
+
+---
+
+## Logs
+
+Logs are stored in the `Logs` folder and include detailed information about synchronization operations and any errors encountered.
+
+---
+
+## Credits
+
+DriverSync is developed by **Pazzie**.
