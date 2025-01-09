@@ -24,15 +24,21 @@ DriverSync enables you to synchronize these “dirty” driver lists. It creates
 ## Disclaimer
 This script is an independent, third-party tool intended for use with iOverlay and CrewChief. It is not affiliated with, endorsed by, or supported by iOverlay, CrewChief, or their respective owners. Use of this script is at your own risk, and no warranty—express or implied—is provided. The author assumes no responsibility for any damage, loss, or other issues arising from its use.
 
-## Getting Started
+**Releases**
+[DriverSync_v0.1.zip](https://github.com/cenodude/DriverSync/releases/download/0.1/DriverSync_v0.1.zip) Python version
+[DriverSync.v0.1_Windows_Executable.zip](https://github.com/cenodude/DriverSync/releases/download/0.1/DriverSync.v0.1_Windows_Executable.zip) Windows Executable
+IMPORTANT: The Windows executable was compiled using PyInstaller, which may cause certain antivirus programs to flag it as a threat. Rest assured, this is a false positive. Please whitelist the executable in your antivirus settings to use it, or consider using the Python version instead.
 
 ### Prerequisites
 
-- For running the Python script:
+- For running the Python (DriveSync.py) script:
   - Python 3.8+
   - Required modules: `PyQt5`
 
-### Installation
+- For running the Windows Executable: 
+  - The Windows executable is just a single file.be sure to place it in its own dedicated folder.
+
+### Installation for DriverSync Python Version
 
 - Install Python from the Microsoft Store (Windows 10 or later) or http://www.python.org/downloads
 
