@@ -42,19 +42,41 @@ IMPORTANT: The Windows executable was compiled using PyInstaller, which may caus
 
 - Install Python from the Microsoft Store (Windows 10 or later) or http://www.python.org/downloads
 
-#### Running the Python Script
+#### Running the Script
 
-1. Run the application in GUI mode:
+1. Run the Python version in GUI mode:
    ```bash
    python DriverSync.py 
    ```
 
-2. Run the application in SILENT mode:
+ Or run the Windows Executable version in GUI mode:
+   ```bash
+  DriverSync.exe 
+   ```
+
+2. Run the Python Version in SILENT mode:
    ```bash
    python DriverSync.py --run
    ```
+ 
+Or run the Windows Executable version in GUI mode:
+  ```bash
+  DriverSync.exe --run
+   ```
 Once you’ve completed the initial GUI configuration, you can run DriverSync in silent mode, which allows you to schedule the script for automatic execution.
 
+#### Running the Windows Executable 
+
+1. Run the application in GUI mode:
+   ```bash
+   DriverSync.exe 
+   ```
+
+2. Run the application in SILENT mode:
+   ```bash
+   DriverSync.exe --run
+   ```
+Once you’ve completed the initial GUI configuration, you can run DriverSync in silent mode, which allows you to schedule the script for automatic execution.
 ---
 
 ## Usage
