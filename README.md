@@ -59,11 +59,12 @@ IMPORTANT: The Windows executable was compiled using PyInstaller, which may caus
    python DriverSync.py --run
    ```
  
-Or run the Windows Executable version in GUI mode:
+Or run the Windows Executable version in SILENT mode:
   ```bash
   DriverSync.exe --run
    ```
 Once you’ve completed the initial GUI configuration, you can run DriverSync in silent mode, which allows you to schedule the script for automatic execution.
+--run or -r are both fine. 
 
 #### Running the Windows Executable 
 
