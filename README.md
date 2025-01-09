@@ -1,4 +1,4 @@
-# DriverSync
+# DriverSync v1.0
 
 ## What's This Tool About?
 DriverSync is a handy little python script that helps you keep your driver tags in sync between iOverlay (settings.dat) and CrewChief (iracing_reputations.json). It makes sure the tags you use in one app show up in the other. No more juggling or manual edits!
