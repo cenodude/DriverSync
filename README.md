@@ -9,6 +9,11 @@ DriverSync enables you to synchronize these “dirty” driver lists. It creates
 
 ---
 
+## Releases
+[DriverSync_v0.1.zip](https://github.com/cenodude/DriverSync/releases/download/0.1/DriverSync_v0.1.zip) for the Python version or/and [DriverSync.v0.1_Windows_Executable.zip](https://github.com/cenodude/DriverSync/releases/download/0.1/DriverSync.v0.1_Windows_Executable.zip) for the Windows Executable version that doesnt require Python.
+
+IMPORTANT: The Windows executable was compiled using PyInstaller, which may cause certain antivirus programs to flag it as a threat. Rest assured, this is a false positive. Please whitelist the executable in your antivirus settings to use it, or consider using the Python version instead.
+
 ## Features
 
 - **Synchronization:** Bidirectional syncing of driver tags and reputations between iOverlay (`settings.dat`) and CrewChief (`iracing_reputations.json`).
@@ -23,11 +28,6 @@ DriverSync enables you to synchronize these “dirty” driver lists. It creates
 
 ## Disclaimer
 This script is an independent, third-party tool intended for use with iOverlay and CrewChief. It is not affiliated with, endorsed by, or supported by iOverlay, CrewChief, or their respective owners. Use of this script is at your own risk, and no warranty—express or implied—is provided. The author assumes no responsibility for any damage, loss, or other issues arising from its use.
-
-## Releases
-[DriverSync_v0.1.zip](https://github.com/cenodude/DriverSync/releases/download/0.1/DriverSync_v0.1.zip) for the Python version or/and [DriverSync.v0.1_Windows_Executable.zip](https://github.com/cenodude/DriverSync/releases/download/0.1/DriverSync.v0.1_Windows_Executable.zip) for the Windows Executable version that doesnt require Python.
-
-IMPORTANT: The Windows executable was compiled using PyInstaller, which may cause certain antivirus programs to flag it as a threat. Rest assured, this is a false positive. Please whitelist the executable in your antivirus settings to use it, or consider using the Python version instead.
 
 ### Prerequisites
 
