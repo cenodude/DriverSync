@@ -1,6 +1,7 @@
 # DriverSync
 
 DriverSync is a python-based application designed to synchronize your drivers data between iOverlay and CrewChief. DriverSync ensures smooth synchronization while maintaining data integrity. 
+By syncing iOverlay with CrewChief, you gain both a visual and audible perspective on any problematic drivers.
 
 ---
 
