@@ -10,7 +10,7 @@ DriverSync enables you to synchronize these “dirty” driver lists. It creates
 ---
 
 ## Releases
-[DriverSync_v0.1.zip](https://github.com/cenodude/DriverSync/releases/download/0.1/DriverSync_v0.1.zip) for the Python version or/and [DriverSync.v0.1_Windows_Executable.zip](https://github.com/cenodude/DriverSync/releases/download/0.1/DriverSync.v0.1_Windows_Executable.zip) for the Windows Executable version that doesnt require Python.
+[DriverSync_v0.1.zip](https://github.com/cenodude/DriverSync/releases/download/0.1/DriverSync_v0.1.zip) for the Python version or [DriverSync.v0.1_Windows_Executable.zip](https://github.com/cenodude/DriverSync/releases/download/0.1/DriverSync.v0.1_Windows_Executable.zip) for the Windows Executable version that doesnt require Python.
 
 IMPORTANT: The Windows executable was compiled using PyInstaller, which may cause certain antivirus programs to flag it as a threat. Rest assured, this is a false positive. Please whitelist the executable in your antivirus settings to use it, or consider using the Python version instead.
 
