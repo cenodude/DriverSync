@@ -63,8 +63,6 @@ Or run the Windows Executable version in SILENT mode:
   ```bash
   DriverSync.exe --run
    ```
-Once you’ve completed the initial GUI configuration, you can run DriverSync in silent mode, which allows you to schedule the script for automatic execution. --run or -r are both fine. 
-
 #### Running the Windows Executable 
 
 1. Run the application in GUI mode:
@@ -76,7 +74,8 @@ Once you’ve completed the initial GUI configuration, you can run DriverSync in
    ```bash
    DriverSync.exe --run
    ```
-Once you’ve completed the initial GUI configuration, you can run DriverSync in silent mode, which allows you to schedule the script for automatic execution.
+Once you’ve completed the initial GUI configuration, you can run DriverSync in silent mode, which allows you to schedule the script for automatic execution. 
+
 ---
 
 ## Usage
@@ -109,20 +108,6 @@ The application uses `config.json` to store default settings:
 Please avoid making manual changes; instead, use the DriveSync settings dialog.
 
 ---
-
-## OPTIONAL: Building the Executable in Windows
-
-Use `PyInstaller` to create a standalone executable:
-
-```bash
-pip install pyinstaller
-pyinstaller --onefile --noconsole DriverSync.py
-```
-
-The executable will be available in the `dist` folder.
-
----
-
 ## Logs
 
 Logs are stored in the `Logs` folder and include detailed information about synchronization operations and any errors encountered.
