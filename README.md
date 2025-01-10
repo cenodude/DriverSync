@@ -11,16 +11,18 @@ DriverSync enables you to synchronize these “dirty” driver lists with iOverl
 
 ---
 
-## Releases
-[DriverSync_v0.1.zip](https://github.com/cenodude/DriverSync/releases/download/0.1/DriverSync_v0.1.zip) for the Python version or [DriverSync.v0.1_Windows_Executable.zip](https://github.com/cenodude/DriverSync/releases/download/0.1/DriverSync.v0.1_Windows_Executable.zip) for the Windows Executable version that doesnt require Python.
-
 IMPORTANT: The Windows executable was compiled using PyInstaller, which may cause certain antivirus programs to flag it as a threat. Rest assured, this is a false positive. Please whitelist the executable in your antivirus settings to use it, or consider using the Python version instead.
 
 ## Features
 
-- **Synchronization:** Bidirectional syncing of driver tags and reputations between iOverlay (`settings.dat`) and CrewChief (`iracing_reputations.json`).
+- **Synchronization:** Bidirectional syncing of driver tags and reputations between iOverlay (`settings.dat`) and CrewChief (`iracing_reputations.json`)
+- **iOverlay Category Selection:** Dynamically select iOverlay categories to be include in the synchronization.
+- ***Dynamic Path Detection**: Detects both localized `OneDrive` paths for CrewChief files (e.g., `Documenten` for Dutch systems) and traditional Documents folders 
+- **Analytics Dialog**: View synchronization statistics
+- **Synchronization Preview**: Preview changes before applying them.
 - **Backup:** Automatic creation of timestamped backups for data safety.
 - **Customizable Settings:** Configure sync paths, update behavior, and more through the settings dialog.
+- **Scheduler with Countdown Timer**: Schedule automatic synchronization tasks with a countdown timer.
 - **User-Friendly GUI:** Dark-themed interface with real-time logs
 - **Logging:** logs saved to `DriverSync.log` for debugging and tracking.
 - **Automatic Dependency Management:** Installs required Python modules automatically.
@@ -91,28 +93,6 @@ Once you’ve completed the initial GUI configuration, you can run DriverSync in
 ## Backup
 
 Backups are stored in the `Backup` folder with filenames including timestamps for easy identification. Backups ensure data safety before synchronization.
-
----
-
-## Configuration
-
-The application uses `config.json` to store default settings:
-
-```json
-{
-  "ioverlay_settings_path": "<default_path_to_settings.dat>",
-  "crewchief_reputations_path": "<default_path_to_iracing_reputations.json>",
-  "update_existing_entries": false,
-  "sync_behavior": "Additive Only"
-}
-```
-
-Please avoid making manual changes; instead, use the DriveSync settings dialog.
-
----
-## Logs
-
-Logs are stored in the `Logs` folder and include detailed information about synchronization operations and any errors encountered.
 
 ---
 
