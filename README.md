@@ -17,7 +17,7 @@ IMPORTANT: The Windows executable was compiled using PyInstaller, which may caus
 
 - **Synchronization:** Bidirectional syncing of driver tags and reputations between iOverlay (`settings.dat`) and CrewChief (`iracing_reputations.json`)
 - **iOverlay Category Selection:** Dynamically select iOverlay categories to be include in the synchronization.
-- ***Dynamic Path Detection**: Detects both localized `OneDrive` paths for CrewChief files (e.g., `Documenten` for Dutch systems) and traditional Documents folders 
+- **Dynamic Path Detection**: Detects both localized `OneDrive` paths for CrewChief files (e.g., `Documenten` for Dutch systems) and traditional Documents folders 
 - **Analytics Dialog**: View synchronization statistics
 - **Synchronization Preview**: Preview changes before applying them.
 - **Backup:** Automatic creation of timestamped backups for data safety.
