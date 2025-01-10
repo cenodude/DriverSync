@@ -27,7 +27,6 @@ IMPORTANT: The Windows executable was compiled using PyInstaller, which may caus
 - **Logging:** logs saved to `DriverSync.log` for debugging and tracking.
 - **Automatic Dependency Management:** Installs required Python modules automatically.
 - **Silent mode** Once you’ve completed your initial configuration in the GUI, you can enable the Silent mode parameter.
-- 
 ---
 
 ## Disclaimer
