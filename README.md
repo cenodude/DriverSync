@@ -8,9 +8,7 @@ In the General section of iOverlay, there’s an option called Driver Tags. This
 CrewChief offers a similar functionality called Reputations, where you can mark drivers as “dirty,” indicating that you should be cautious around them. You can tell Jim(CrewChief) to "mark the driver [ahead/behind] as dirty" 
 
 DriverSync enables you to synchronize these “dirty” driver lists with iOverlay and CrewChief. It creates a new group in iOverlay named CrewChief, automatically populates it with the synchronized drivers, and also updates CrewChief with any tagged drivers from iOverlay.
-
 ---
-
 IMPORTANT: The Windows executable was compiled using PyInstaller, which may cause certain antivirus programs to flag it as a threat. Rest assured, this is a false positive. Please whitelist the executable in your antivirus settings to use it, or consider using the Python version instead.
 
 ## Features
@@ -37,62 +35,40 @@ This script is an independent, third-party tool intended for use with iOverlay a
 
 - For running the Python (DriveSync.py) script:
   - Python 3.8+
-  - Required modules: `PyQt5`
+  - Required modules: `PyQt5, requests, schedule`
 
 - For running the Windows Executable: 
   - The Windows executable is just a single file.be sure to place it in its own dedicated folder.
 
 ### Installation for DriverSync Python Version
 
-- Install Python from the Microsoft Store (Windows 10 or later) or http://www.python.org/downloads
+- Install Python from the Microsoft Store or http://www.python.org/downloads
 
 #### Running the Script
 
-1. Run the Python version in GUI mode:
+Run the Python version:
    ```bash
-   python DriverSync.py 
+   python DriverSync.py                   GUI mode
+   python DriverSync.py --run             Silent mode
+   python DriverSync.py --background      Background mode (in systray)
+   python DriverSync.py --reset           Reset all settings. statistics and logs
+   python DriverSync.py --help            Help me :-)
    ```
 
- Or run the Windows Executable version in GUI mode:
+ Or run the Windows Executable version:
    ```bash
-  DriverSync.exe 
+  DriverSync.exe                          GUI mode
+  DriverSync.exe --run                    Silent mode
+  DriverSync.exe --background-process     Background mode (in systray)
    ```
 
-2. Run the Python version in SILENT mode:
-   ```bash
-   python DriverSync.py --run
-   ```
- 
-3.  Run the Python version in BACKGROUND mode:
-   ```bash
-   python DriverSync.py --background
-   ```
-   ```
-#### Running the Windows Executable 
-
-1. Run the application in GUI mode:
-   ```bash
-   DriverSync.exe 
-   ```
-
-2. Run the application in SILENT mode:
-   ```bash
-   DriverSync.exe --run
-   ```
-   
-3.  Run the application in BACKGROUND mode:
-   ```bash
-   DriverSync.exe --background-process
-   ```
-Once you’ve completed the initial GUI configuration, you can run DriverSync in silent or background mode, which allows you to schedule the script for automatic execution. 
-
----
+Once you’ve completed the initial GUI configuration, you can run DriverSync in silent or background mode.
 
 ## Usage
 
 1. Launch the application.
 2. Configure file paths for iOverlay and CrewChief data in the Settings dialog if needed. DriverSync will automatically look for the default paths of iOverlay and CrewChief.
-3. Click "Sync Now" to start the synchronization process.
+3. Click "Sync Now" or "Preview"to start/Show the synchronization process.
 
 ## Credits
 
