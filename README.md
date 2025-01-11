@@ -27,6 +27,7 @@ IMPORTANT: The Windows executable was compiled using PyInstaller, which may caus
 - **Logging:** logs saved to `DriverSync.log` for debugging and tracking.
 - **Automatic Dependency Management:** Installs required Python modules automatically.
 - **Silent mode** Once you’ve completed your initial configuration in the GUI, you can enable the Silent mode parameter.
+- **Background modus** Automatically starts in the systray
 ---
 
 ## Disclaimer
@@ -36,7 +37,7 @@ This script is an independent, third-party tool intended for use with iOverlay a
 
 - For running the Python (DriveSync.py) script:
   - Python 3.8+
-  - Required modules: `PyQt5, requests, schedule`
+  - Required modules: `PyQt5`
 
 - For running the Windows Executable: 
   - The Windows executable is just a single file.be sure to place it in its own dedicated folder.
@@ -57,14 +58,15 @@ This script is an independent, third-party tool intended for use with iOverlay a
   DriverSync.exe 
    ```
 
-2. Run the Python Version in SILENT mode:
+2. Run the Python version in SILENT mode:
    ```bash
    python DriverSync.py --run
    ```
  
-Or run the Windows Executable version in SILENT mode:
-  ```bash
-  DriverSync.exe --run
+3.  Run the Python version in BACKGROUND mode:
+   ```bash
+   python DriverSync.py --background
+   ```
    ```
 #### Running the Windows Executable 
 
@@ -77,7 +79,12 @@ Or run the Windows Executable version in SILENT mode:
    ```bash
    DriverSync.exe --run
    ```
-Once you’ve completed the initial GUI configuration, you can run DriverSync in silent mode, which allows you to schedule the script for automatic execution. 
+   
+3.  Run the application in BACKGROUND mode:
+   ```bash
+   DriverSync.exe --background-process
+   ```
+Once you’ve completed the initial GUI configuration, you can run DriverSync in silent or background mode, which allows you to schedule the script for automatic execution. 
 
 ---
 
@@ -86,14 +93,6 @@ Once you’ve completed the initial GUI configuration, you can run DriverSync in
 1. Launch the application.
 2. Configure file paths for iOverlay and CrewChief data in the Settings dialog if needed. DriverSync will automatically look for the default paths of iOverlay and CrewChief.
 3. Click "Sync Now" to start the synchronization process.
-
----
-
-## Backup
-
-Backups are stored in the `Backup` folder with filenames including timestamps for easy identification. Backups ensure data safety before synchronization.
-
----
 
 ## Credits
 
