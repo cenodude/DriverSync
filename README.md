@@ -36,7 +36,7 @@ This script is an independent, third-party tool intended for use with iOverlay a
 
 - For running the Python (DriveSync.py) script:
   - Python 3.8+
-  - Required modules: `PyQt5`
+  - Required modules: `PyQt5, requests, schedule`
 
 - For running the Windows Executable: 
   - The Windows executable is just a single file.be sure to place it in its own dedicated folder.
