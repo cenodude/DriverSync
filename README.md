@@ -8,6 +8,7 @@ In the General section of iOverlay, there’s an option called Driver Tags. This
 CrewChief offers a similar functionality called Reputations, where you can mark drivers as “dirty,” indicating that you should be cautious around them. You can tell Jim(CrewChief) to "mark the driver [ahead/behind] as dirty" 
 
 DriverSync enables you to synchronize these “dirty” driver lists with iOverlay and CrewChief. It creates a new group in iOverlay named CrewChief, automatically populates it with the synchronized drivers, and also updates CrewChief with any tagged drivers from iOverlay.
+
 ---
 IMPORTANT: The Windows executable was compiled using PyInstaller, which may cause certain antivirus programs to flag it as a threat. Rest assured, this is a false positive. Please whitelist the executable in your antivirus settings to use it, or consider using the Python version instead.
 
