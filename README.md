@@ -62,8 +62,33 @@ Run the Python version:
   DriverSync.exe --background-process     Background mode (in systray)
    ```
 
-Once you’ve completed the initial GUI configuration, you can run DriverSync in silent or background mode.
+Once you’ve completed the initial GUI configuration, you can run DriverSync in silent or background mode. Or you can use the DriverSync_CLI version.
+DriverSync_CLI can be easily integrated into automation scripts or cron jobs for regular synchronization tasks without manual intervention.
+Lightweight Operation consume less memory and resources compared to running DriverSync
 
+## Command-Line Arguments for DriverSync_CLI
+
+DriverSync_CLI provides several command-line options to manage synchronization and backups:
+- `--sync`          Perform synchronization based on `config.json`.
+- `--preview`       Preview synchronization changes without applying them.
+- `--backup`        Create a backup of the `iOverlay` and `CrewChief` files.
+- `--about`         Display information about DriverSync, including version and GitHub link.
+- `--scheduler N`   Run synchronization every N hours.
+- `--background`    Run the script in the background (used with `--scheduler`).
+- `--reset`         Reset the application by clearing all data and configuration.
+- `--analytics`     Show analytics summary with synchronization statistics.
+
+Example Usage:
+```bash
+# Perform synchronization
+python DriverSync_CLI.py --sync
+
+# Preview changes
+python DriverSync_CLI.py --preview
+
+# Schedule synchronization every 2 hours in the background
+python DriverSync_CLI.py --scheduler 2 --background
+  ```
 ## Usage
 
 1. Launch the application.
