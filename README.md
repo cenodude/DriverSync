@@ -90,18 +90,30 @@ python DriverSync_CLI.py --preview
 # Schedule synchronization every 2 hours in the background
 python DriverSync_CLI.py --scheduler 2 --background
   ```
-### **When to Use Update Existing Entries vs Bidirectional in settings**
 
-| **Scenario** | **Use Bidirectional** | **Use `update_existing_entries`** |
-|--------------|------------------------|-----------------------------------|
-| Keep both systems identical by adding/deleting drivers. | ✅ | ❌ |
-| Correct mismatched driver details (e.g., name updates). | ❌ | ✅ |
-| Fully synchronize both systems, including updates. | ✅ | ✅ |
-| Avoid data loss by preserving existing driver details. | ✅ | ❌ |
+## Sync Behavior
+The `sync_behavior` configuration determines how synchronization handles additions and deletions:
+- **Additive Only:** Adds missing drivers but does not delete any drivers.
+- **Bidirectional:** Adds missing drivers and removes drivers that no longer exist in the other system.
+
+## Update Existing Entries
+The `update_existing_entries` setting focuses on updating the details of drivers that already exist in both systems without adding or deleting drivers.
 
 ---
 
-### **Examples**
+## When to Use Each
+
+| **Scenario**                                          | **Use Additive Only** | **Use Bidirectional** | **Use `update_existing_entries`** |
+|-------------------------------------------------------|------------------------|------------------------|-----------------------------------|
+| Keep both systems identical by adding/deleting drivers. | ❌                     | ✅                     | ❌                                |
+| Prevent deletions while adding missing drivers.        | ✅                     | ❌                     | ❌                                |
+| Correct mismatched driver details (e.g., name updates).| ❌                     | ❌                     | ✅                                |
+| Fully synchronize both systems, including updates.     | ❌                     | ✅                     | ✅                                |
+| Avoid data loss by preserving existing driver details. | ✅                     | ✅                     | ❌                                |
+
+---
+
+## Examples
 1. **Additive Only with `update_existing_entries`:**
    - Drivers are only added between systems.
    - Existing driver details are synchronized (e.g., name corrections).
