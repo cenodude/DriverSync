@@ -9,6 +9,9 @@ CrewChief offers a similar functionality called Reputations, where you can mark 
 
 DriverSync enables you to synchronize these “dirty” driver lists with iOverlay and CrewChief. It creates a new group in iOverlay named CrewChief, automatically populates it with the synchronized drivers, and also updates CrewChief with any tagged drivers from iOverlay.
 
+## Disclaimer
+This script is an independent, third-party tool intended for use with iOverlay and CrewChief. It is not affiliated with, endorsed by, or supported by iOverlay, CrewChief, or their respective owners. Use of this script is at your own risk, and no warranty—express or implied—is provided. The author assumes no responsibility for any damage, loss, or other issues arising from its use.
+
 IMPORTANT: The Windows executable was compiled using PyInstaller, which may cause certain antivirus programs to flag it as a threat. Rest assured, this is a false positive. Please whitelist the executable in your antivirus settings to use it, or consider using the Python version instead.
 ---
 
@@ -26,11 +29,39 @@ IMPORTANT: The Windows executable was compiled using PyInstaller, which may caus
   - Automatically create backups of iOverlay and CrewChief files before synchronization to prevent data loss.
 - **Delta Reporting**:
   - Displays a summary of synchronization actions, including drivers added, deleted, and total counts.
+---
+## Sync Behavior
+The `sync_behavior` configuration determines how synchronization handles additions and deletions:
+- **Additive Only:** Adds missing drivers but does not delete any drivers.
+- **Bidirectional:** Adds missing drivers and removes drivers that no longer exist in the other system.
+- **Update existing entries:** focuses on updating the details of drivers that already exist in both systems without adding or deleting drivers.
+
+## When to Use Each
+
+| **Scenario**                                          | **Use Additive Only** | **Use Bidirectional** | **Use `update_existing_entries`** |
+|-------------------------------------------------------|------------------------|------------------------|-----------------------------------|
+| Keep both systems identical by adding/deleting drivers. | ❌                     | ✅                     | ❌                                |
+| Prevent deletions while adding missing drivers.        | ✅                     | ❌                     | ❌                                |
+| Correct mismatched driver details (e.g., name updates).| ❌                     | ❌                     | ✅                                |
+| Fully synchronize both systems, including updates.     | ❌                     | ✅                     | ✅                                |
+| Avoid data loss by preserving existing driver details. | ✅                     | ✅                     | ❌                                |
 
 ---
 
-## Disclaimer
-This script is an independent, third-party tool intended for use with iOverlay and CrewChief. It is not affiliated with, endorsed by, or supported by iOverlay, CrewChief, or their respective owners. Use of this script is at your own risk, and no warranty—express or implied—is provided. The author assumes no responsibility for any damage, loss, or other issues arising from its use.
+## Examples
+1. **Additive Only with `update_existing_entries`:**
+   - Drivers are only added between systems.
+   - Existing driver details are synchronized (e.g., name corrections).
+
+2. **Bidirectional Without `update_existing_entries`:**
+   - Drivers are added or deleted as needed.
+   - No updates to existing driver details.
+
+3. **Bidirectional with `update_existing_entries`:**
+   - Adds and deletes drivers as needed.
+   - Updates details for drivers already present in both systems.
+
+---
 
 ### Prerequisites
 
@@ -90,39 +121,6 @@ python DriverSync_CLI.py --preview
 # Schedule synchronization every 2 hours in the background
 python DriverSync_CLI.py --scheduler 2 --background
   ```
-
-## Sync Behavior
-The `sync_behavior` configuration determines how synchronization handles additions and deletions:
-- **Additive Only:** Adds missing drivers but does not delete any drivers.
-- **Bidirectional:** Adds missing drivers and removes drivers that no longer exist in the other system.
-- **Update existing entries:** focuses on updating the details of drivers that already exist in both systems without adding or deleting drivers.
-
-## When to Use Each
-
-| **Scenario**                                          | **Use Additive Only** | **Use Bidirectional** | **Use `update_existing_entries`** |
-|-------------------------------------------------------|------------------------|------------------------|-----------------------------------|
-| Keep both systems identical by adding/deleting drivers. | ❌                     | ✅                     | ❌                                |
-| Prevent deletions while adding missing drivers.        | ✅                     | ❌                     | ❌                                |
-| Correct mismatched driver details (e.g., name updates).| ❌                     | ❌                     | ✅                                |
-| Fully synchronize both systems, including updates.     | ❌                     | ✅                     | ✅                                |
-| Avoid data loss by preserving existing driver details. | ✅                     | ✅                     | ❌                                |
-
----
-
-## Examples
-1. **Additive Only with `update_existing_entries`:**
-   - Drivers are only added between systems.
-   - Existing driver details are synchronized (e.g., name corrections).
-
-2. **Bidirectional Without `update_existing_entries`:**
-   - Drivers are added or deleted as needed.
-   - No updates to existing driver details.
-
-3. **Bidirectional with `update_existing_entries`:**
-   - Adds and deletes drivers as needed.
-   - Updates details for drivers already present in both systems.
-
----
 
 ## Usage
 
