@@ -90,6 +90,32 @@ python DriverSync_CLI.py --preview
 # Schedule synchronization every 2 hours in the background
 python DriverSync_CLI.py --scheduler 2 --background
   ```
+### **When to Use Update Existing Entries vs Bidirectional in settings**
+
+| **Scenario** | **Use Bidirectional** | **Use `update_existing_entries`** |
+|--------------|------------------------|-----------------------------------|
+| Keep both systems identical by adding/deleting drivers. | ✅ | ❌ |
+| Correct mismatched driver details (e.g., name updates). | ❌ | ✅ |
+| Fully synchronize both systems, including updates. | ✅ | ✅ |
+| Avoid data loss by preserving existing driver details. | ✅ | ❌ |
+
+---
+
+### **Examples**
+1. **Additive Only with `update_existing_entries`:**
+   - Drivers are only added between systems.
+   - Existing driver details are synchronized (e.g., name corrections).
+
+2. **Bidirectional Without `update_existing_entries`:**
+   - Drivers are added or deleted as needed.
+   - No updates to existing driver details.
+
+3. **Bidirectional with `update_existing_entries`:**
+   - Adds and deletes drivers as needed.
+   - Updates details for drivers already present in both systems.
+
+---
+
 ## Usage
 
 1. Launch the application.
