@@ -12,21 +12,21 @@ DriverSync enables you to synchronize these “dirty” driver lists with iOverl
 IMPORTANT: The Windows executable was compiled using PyInstaller, which may cause certain antivirus programs to flag it as a threat. Rest assured, this is a false positive. Please whitelist the executable in your antivirus settings to use it, or consider using the Python version instead.
 ---
 
-## Features
+## Features GUI
+- **Synchronization Modes**:
+  - **Additive Only**: Adds missing drivers without deleting any existing data.
+  - **Bidirectional**: Fully synchronizes data by adding missing drivers and removing obsolete ones.
+- **Update Existing Entries**:
+  - Ensures that driver details (e.g., name or category) are updated between systems for consistency.
+- **Category Filtering**:
+  - Synchronize only drivers from selected categories, giving you precise control over what data is synced.
+- **Preview Mode**:
+  - Generate a detailed preview of synchronization changes (additions and deletions) before applying them.
+- **Backup Support**:
+  - Automatically create backups of iOverlay and CrewChief files before synchronization to prevent data loss.
+- **Delta Reporting**:
+  - Displays a summary of synchronization actions, including drivers added, deleted, and total counts.
 
-- **Synchronization:** Bidirectional syncing of driver tags and reputations between iOverlay (`settings.dat`) and CrewChief (`iracing_reputations.json`)
-- **iOverlay Category Selection:** Dynamically select iOverlay categories to be include in the synchronization.
-- **Dynamic Path Detection**: Detects both localized `OneDrive` paths for CrewChief files (e.g., `Documenten` for Dutch systems) and traditional Documents folders 
-- **Analytics Dialog**: View synchronization statistics
-- **Synchronization Preview**: Preview changes before applying them.
-- **Backup:** Automatic creation of timestamped backups for data safety.
-- **Customizable Settings:** Configure sync paths, update behavior, and more through the settings dialog.
-- **Scheduler with Countdown Timer**: Schedule automatic synchronization tasks with a countdown timer.
-- **User-Friendly GUI:** Dark-themed interface with real-time logs
-- **Logging:** logs saved to `DriverSync.log` for debugging and tracking.
-- **Automatic Dependency Management:** Installs required Python modules automatically.
-- **Silent mode** Once you’ve completed your initial configuration in the GUI, you can enable the Silent mode parameter.
-- **Background modus** Automatically starts in the systray
 ---
 
 ## Disclaimer
