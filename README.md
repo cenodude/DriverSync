@@ -95,11 +95,7 @@ python DriverSync_CLI.py --scheduler 2 --background
 The `sync_behavior` configuration determines how synchronization handles additions and deletions:
 - **Additive Only:** Adds missing drivers but does not delete any drivers.
 - **Bidirectional:** Adds missing drivers and removes drivers that no longer exist in the other system.
-
-## Update Existing Entries
-The `update_existing_entries` setting focuses on updating the details of drivers that already exist in both systems without adding or deleting drivers.
-
----
+- **Update existing entries:** focuses on updating the details of drivers that already exist in both systems without adding or deleting drivers.
 
 ## When to Use Each
 
