@@ -35,7 +35,8 @@ DriverSync is an independent, third-party tool not affiliated with or supported 
 
 ---
 
-## **Features (GUI)**
+## **Features (GUI)** 
+- **DriverSync GUI and DriverSync CLI**: The GUI provides a user-friendly interface for configuring and managing synchronization interactively, while the DriverSync CLI offers a lightweight, command-line alternative for automation and integration into scripts or scheduled tasks.
 - **Synchronization Modes**:
   - **Additive Only**: Adds missing drivers without deleting existing data.
   - **Bidirectional**: Fully synchronizes data by adding missing drivers and removing obsolete ones.
