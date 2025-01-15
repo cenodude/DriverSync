@@ -9,52 +9,54 @@
     <meta name="author" content="Pazzie" />
     <meta property="og:title" content="DriverSync - Synchronize Driver Data" />
     <meta property="og:description" content="DriverSync is a Python-based tool that synchronizes driver data between iOverlay and CrewChief, helping you keep track of problematic drivers." />
+    <meta property="og:image" content="https://example.com/driver-sync-logo.jpg" /> <!-- Replace with your logo or relevant image -->
     <meta property="og:url" content="https://github.com/cenodude/DriverSync" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="DriverSync - Synchronize Driver Data" />
     <meta name="twitter:description" content="DriverSync is a Python-based tool that synchronizes driver data between iOverlay and CrewChief, offering both visual and audible alerts for problematic drivers." />
+    <meta name="twitter:image" content="https://example.com/driver-sync-logo.jpg" /> <!-- Replace with your logo or relevant image -->
     <title>DriverSync - Synchronize Driver Data Between iOverlay and CrewChief</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #1c1c1c;
+            color: #f0f0f0;
             margin: 0;
             padding: 0;
         }
         header {
             background: #333;
             color: #fff;
-            padding: 10px 0;
+            padding: 20px 0;
             text-align: center;
-        }
-        h1 {
-            margin: 0;
+            font-size: 2em;
         }
         .content {
             margin: 20px;
         }
         h2 {
-            color: #333;
+            color: #fff;
+            margin-top: 20px;
         }
         pre {
-            background-color: #f2f2f2;
-            border: 1px solid #ddd;
-            padding: 10px;
+            background-color: #282828;
+            border: 1px solid #444;
+            padding: 20px;
             overflow-x: auto;
-            font-size: 1.1em;
+            font-size: 1.2em;
+            color: #eee;
         }
         ul {
             list-style-type: disc;
             margin-left: 20px;
         }
         .features, .prerequisites, .installation, .usage, .examples, .credits {
-            background: #fff;
+            background: #333;
             border-radius: 8px;
-            padding: 15px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
             margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .features ul, .examples ul {
             padding-left: 20px;
@@ -69,11 +71,11 @@
         }
         th, td {
             padding: 10px;
-            border: 1px solid #ddd;
+            border: 1px solid #444;
             text-align: left;
         }
         th {
-            background-color: #f7f7f7;
+            background-color: #555;
         }
         footer {
             background-color: #333;
@@ -83,22 +85,47 @@
             margin-top: 30px;
         }
         a {
-            color: #007bff;
+            color: #56a0d3;
             text-decoration: none;
         }
         a:hover {
             text-decoration: underline;
         }
+        .ascii-art {
+            font-family: monospace;
+            background-color: #1c1c1c;
+            padding: 10px;
+            color: #56a0d3;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>DriverSync</h1>
+        DriverSync
     </header>
     
     <div class="content">
+        <div class="ascii-art">
+            ██████╗ ██████╗ ██╗██╗   ██╗███████╗██████╗ ███████╗██╗   ██╗███╗   ██╗ ██████╗ <br>
+            ██╔══██╗██╔══██╗██║██║   ██║██╔════╝██╔══██╗██╔════╝╚██╗ ██╔╝████╗  ██║██╔════╝ <br>
+            ██║  ██║██████╔╝██║██║   ██║█████╗  ██████╔╝███████╗ ╚████╔╝ ██╔██╗ ██║██║     <br>
+            ██║  ██║██╔══██╗██║╚██╗ ██╔╝██╔══╝  ██╔══██╗╚════██║  ╚██╔╝  ██║╚██╗██║██║     <br>
+            ██████╔╝██║  ██║██║ ╚████╔╝ ███████╗██║  ██║███████║   ██║   ██║ ╚████║╚██████╗ <br>
+            ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝  ╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═══╝ ╚═════╝
+        </div>
+
         <h2>Overview</h2>
         <p><strong>DriverSync</strong> is a Python-based application designed to synchronize driver data between <strong>iOverlay</strong> and <strong>CrewChief</strong>. It ensures seamless synchronization while maintaining data integrity. By syncing iOverlay with CrewChief, you gain both a visual and audible perspective on potentially problematic drivers.</p>
+
+        <h2>Download Links</h2>
+        <ul>
+            <li><a href="https://github.com/cenodude/DriverSync/releases/download/0.5/DriverSync.v0.5_Windows_Installer.exe" target="_blank">Download Windows Installer</a></li>
+            <li><a href="https://github.com/cenodude/DriverSync/releases/download/0.5/DriverSync.v0.5_Windows_Executable.zip" target="_blank">Download Windows Executable (ZIP)</a></li>
+            <li><a href="https://github.com/cenodude/DriverSync/releases/download/0.5/DriverSync.v0.5.zip" target="_blank">Download Source Code (ZIP)</a></li>
+        </ul>
 
         <h2>How It Works</h2>
         <p>In the General section of <strong>iOverlay</strong>, you can tag drivers under various categories such as "friends" or "dirty drivers." Similarly, <strong>CrewChief</strong> allows marking drivers as "dirty," letting you instruct Jim (CrewChief) to "mark the driver [ahead/behind] as dirty." <strong>DriverSync</strong> synchronizes these "dirty" driver lists between iOverlay and CrewChief. It:</p>
@@ -111,12 +138,7 @@
         <h2>Disclaimer</h2>
         <p>DriverSync is an independent, third-party tool not affiliated with or supported by iOverlay, CrewChief, or their respective owners. Use it at your own risk. No warranty is provided, and the author assumes no responsibility for any damages or issues arising from its use.</p>
         <blockquote>Note: The Windows executable was created using PyInstaller, which may cause antivirus programs to flag it as a threat. This is a false positive. Please whitelist the executable or consider using the Python version.</blockquote>
-        <h2>Download Links</h2>
-        <ul>
-            <li><a href="https://github.com/cenodude/DriverSync/releases/download/0.5/DriverSync.v0.5_Windows_Installer.exe" target="_blank">Download Windows Installer</a></li>
-            <li><a href="https://github.com/cenodude/DriverSync/releases/download/0.5/DriverSync.v0.5_Windows_Executable.zip" target="_blank">Download Windows Executable (ZIP)</a></li>
-            <li><a href="https://github.com/cenodude/DriverSync/releases/download/0.5/DriverSync.v0.5.zip" target="_blank">Download Source Code (ZIP)</a></li>
-        </ul>
+
         <h2>Features (GUI)</h2>
         <div class="features">
             <ul>
@@ -181,78 +203,8 @@
             </table>
         </div>
 
-        <h2>Examples</h2>
-        <div class="examples">
-            <ul>
-                <li><strong>Additive Only with <code>update_existing_entries</code>:</strong> Drivers are only added between systems. Existing driver details are synchronized (e.g., name corrections).</li>
-                <li><strong>Bidirectional Without <code>update_existing_entries</code>:</strong> Drivers are added or deleted as needed. No updates to existing driver details.</li>
-                <li><strong>Bidirectional with <code>update_existing_entries</code>:</strong> Adds and deletes drivers as needed. Updates details for drivers already present in both systems.</li>
-            </ul>
-        </div>
-
-        <h2>Prerequisites</h2>
-        <div class="prerequisites">
-            <ul>
-                <li><strong>Python Version:</strong>
-                    <ul>
-                        <li>Python 3.8+</li>
-                        <li>Required modules: <code>PyQt5, requests, schedule</code></li>
-                    </ul>
-                </li>
-                <li><strong>Windows Executable:</strong> Place the executable in a dedicated folder.</li>
-            </ul>
-        </div>
-
-        <h2>Installation for DriverSync (Python Version)</h2>
-        <div class="installation">
-            <ol>
-                <li>Install Python from the <a href="http://www.python.org/downloads">official site</a> or the Microsoft Store.</li>
-                <li>Install required modules:
-                    <pre><code>pip install PyQt5 requests schedule</code></pre>
-                </li>
-            </ol>
-        </div>
-
-        <h2>Usage Instructions</h2>
-        <div class="usage">
-            <h3>Running the Python Version</h3>
-            <pre><code>python DriverSync.py                   # GUI mode
-python DriverSync.py --run             # Silent mode
-python DriverSync.py --background      # Background mode (systray)
-python DriverSync.py --reset           # Reset all settings, stats, and logs
-python DriverSync.py --help            # Show help information</code></pre>
-
-            <h3>Running the Windows Executable</h3>
-            <pre><code>DriverSync.exe                          # GUI mode
-DriverSync.exe --run                    # Silent mode
-DriverSync.exe --background-process     # Background mode (systray)</code></pre>
-        </div>
-
-        <h2>DriverSync_CLI Command-Line Arguments</h2>
-        <div class="cli">
-            <ul>
-                <li><code>--sync</code> - Perform synchronization based on <code>config.json</code>.</li>
-                <li><code>--preview</code> - Preview synchronization changes without applying them.</li>
-                <li><code>--backup</code> - Create a backup of the iOverlay and CrewChief files.</li>
-                <li><code>--about</code> - Display information about DriverSync.</li>
-                <li><code>--scheduler N</code> - Run synchronization every N hours.</li>
-                <li><code>--background</code> - Run the script in the background (used with <code>--scheduler</code>).</li>
-                <li><code>--reset</code> - Reset the application.</li>
-                <li><code>--analytics</code> - Show analytics summary.</li>
-            </ul>
-
-            <pre><code># Perform synchronization
-python DriverSync_CLI.py --sync
-
-# Preview changes
-python DriverSync_CLI.py --preview
-
-# Schedule synchronization every 2 hours in the background
-python DriverSync_CLI.py --scheduler 2 --background</code></pre>
-        </div>
-
         <h2>Credits</h2>
-        <p>DriverSync is developed by <strong>Pazzie</strong>. If you find this tool useful, consider giving it a star on <a href="https://github.com/cenodude/DriverSync">GitHub</a>!</p>
+        <p>DriverSync is developed by <strong>Pazzie</strong>. If you find this tool useful, consider giving it a star on <a href="https://github.com/cenodude/DriverSync" target="_blank">GitHub</a>!</p>
     </div>
 
     <footer>
