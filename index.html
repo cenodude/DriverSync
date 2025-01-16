@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,132 +15,54 @@
     <meta name="twitter:title" content="DriverSync - Synchronize Driver Data" />
     <meta name="twitter:description" content="DriverSync is a Python-based tool that synchronizes driver data between iOverlay and CrewChief, offering both visual and audible alerts for problematic drivers." />
     <title>DriverSync - Synchronize Driver Data Between iOverlay and CrewChief</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #1c1c1c;
-            color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-            font-size: 2em;
-        }
-        .content {
-            margin: 20px;
-        }
-        h2 {
-            color: #fff;
-            margin-top: 20px;
-        }
-        pre {
-            background-color: #282828;
-            border: 1px solid #444;
-            padding: 20px;
-            overflow-x: auto;
-            font-size: 1.2em;
-            color: #eee;
-            white-space: pre-wrap; /* Ensure line breaks are respected */
-        }
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-        .features, .prerequisites, .installation, .usage, .examples, .credits {
-            background: #333;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .features ul, .examples ul {
-            padding-left: 20px;
-        }
-        .table-container {
-            margin-top: 20px;
-            overflow-x: auto;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 10px;
-            border: 1px solid #444;
-            text-align: left;
-        }
-        th {
-            background-color: #555;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            margin-top: 30px;
-        }
-        a {
-            color: #56a0d3;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
 </head>
+
 <body>
-    <header>
-        DriverSync
+    <header class="container">
+        <h1>DriverSync</h1>
+        <p>Simplify driver synchronization between iOverlay and CrewChief</p>
     </header>
-    
-    <div class="content">
-        <h2>Overview</h2>
-        <p><strong>DriverSync</strong> is a Python-based application designed to synchronize driver data between <strong>iOverlay</strong> and <strong>CrewChief</strong>. It ensures seamless synchronization while maintaining data integrity. By syncing iOverlay with CrewChief, you gain both a visual and audible perspective on potentially problematic drivers.</p>
 
-        <h2>Download Links</h2>
+    <nav>
         <ul>
-            <li><a href="https://github.com/cenodude/DriverSync/releases/download/0.5/DriverSync.v0.5_Windows_Installer.exe" target="_blank">Download Windows Installer</a></li>
-            <li><a href="https://github.com/cenodude/DriverSync/releases/download/0.5/DriverSync.v0.5_Windows_Executable.zip" target="_blank">Download Windows Executable (ZIP)</a></li>
-            <li><a href="https://github.com/cenodude/DriverSync/releases/download/0.5/DriverSync.v0.5.zip" target="_blank">Download Source Code (ZIP)</a></li>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#download">Download</a></li>
+            <li><a href="#credits">Credits</a></li>
         </ul>
+    </nav>
 
-        <h2>How It Works</h2>
-        <p>In the General section of <strong>iOverlay</strong>, you can tag drivers under various categories such as "friends" or "dirty drivers." Similarly, <strong>CrewChief</strong> allows marking drivers as "dirty," letting you instruct Jim (CrewChief) to "mark the driver [ahead/behind] as dirty." <strong>DriverSync</strong> synchronizes these "dirty" driver lists between iOverlay and CrewChief. It:</p>
-        <ul>
-            <li>Creates a new group in iOverlay named "CrewChief."</li>
-            <li>Automatically populates this group with synchronized drivers.</li>
-            <li>Updates CrewChief with tagged drivers from iOverlay.</li>
-        </ul>
+    <main class="container">
+        <section id="overview">
+            <h2>Overview</h2>
+            <p><strong>DriverSync</strong> is a Python-based application designed to synchronize driver data between <strong>iOverlay</strong> and <strong>CrewChief</strong>. It ensures seamless synchronization while maintaining data integrity. By syncing iOverlay with CrewChief, you gain both a visual and audible perspective on potentially problematic drivers.</p>
+        </section>
 
-        <h2>Disclaimer</h2>
-        <p>DriverSync is an independent, third-party tool not affiliated with or supported by iOverlay, CrewChief, or their respective owners. Use it at your own risk. No warranty is provided, and the author assumes no responsibility for any damages or issues arising from its use.</p>
-        <blockquote>Note: The Windows executable was created using PyInstaller, which may cause antivirus programs to flag it as a threat. This is a false positive. Please whitelist the executable or consider using the Python version.</blockquote>
-
-        <h2>Features (GUI)</h2>
-        <div class="features">
+        <section id="download">
+            <h2>Download Links</h2>
             <ul>
-                <li><strong>DriverSync GUI and DriverSync CLI:</strong> The GUI provides a user-friendly interface for configuring and managing synchronization interactively, while the DriverSync CLI offers a lightweight, command-line alternative for automation and integration into scripts or scheduled tasks.</li>
-                <li><strong>Synchronization Modes:</strong>
-                    <ul>
-                        <li><strong>Additive Only:</strong> Adds missing drivers without deleting existing data.</li>
-                        <li><strong>Bidirectional:</strong> Fully synchronizes data by adding missing drivers and removing obsolete ones.</li>
-                    </ul>
-                </li>
-                <li><strong>Update Existing Entries:</strong> Keeps driver details (e.g., name or category) updated across systems.</li>
-                <li><strong>Category Filtering:</strong> Synchronize drivers only from selected categories.</li>
-                <li><strong>Preview Mode:</strong> See a detailed preview of synchronization changes before applying them.</li>
-                <li><strong>Backup Support:</strong> Automatically creates backups of iOverlay and CrewChief files to prevent data loss.</li>
-                <li><strong>Delta Reporting:</strong> Displays a summary of synchronization actions, including drivers added, deleted, and total counts.</li>
+                <li><a href="https://github.com/cenodude/DriverSync/releases/download/0.5/DriverSync.v0.5_Windows_Installer.exe" target="_blank">Download Windows Installer</a></li>
+                <li><a href="https://github.com/cenodude/DriverSync/releases/download/0.5/DriverSync.v0.5_Windows_Executable.zip" target="_blank">Download Windows Executable (ZIP)</a></li>
+                <li><a href="https://github.com/cenodude/DriverSync/releases/download/0.5/DriverSync.v0.5.zip" target="_blank">Download Source Code (ZIP)</a></li>
             </ul>
-        </div>
+        </section>
 
-        <h2>Sync Behavior</h2>
-        <div class="table-container">
+        <section id="features">
+            <h2>Features</h2>
+            <article>
+                <ul>
+                    <li>DriverSync GUI and CLI for flexible use cases.</li>
+                    <li>Support for both Additive Only and Bidirectional synchronization modes.</li>
+                    <li>Category filtering and preview mode for synchronization actions.</li>
+                    <li>Delta reporting for detailed summaries of changes.</li>
+                    <li>Automatic backups to prevent data loss.</li>
+                </ul>
+            </article>
+        </section>
+
+        <section>
+            <h2>Sync Behavior</h2>
             <table>
                 <thead>
                     <tr>
@@ -168,28 +91,19 @@
                         <td>❌</td>
                         <td>✅</td>
                     </tr>
-                    <tr>
-                        <td>Fully synchronize both systems, including updates.</td>
-                        <td>❌</td>
-                        <td>✅</td>
-                        <td>✅</td>
-                    </tr>
-                    <tr>
-                        <td>Avoid data loss by preserving existing driver details.</td>
-                        <td>✅</td>
-                        <td>✅</td>
-                        <td>❌</td>
-                    </tr>
                 </tbody>
             </table>
-        </div>
+        </section>
 
-        <h2>Credits</h2>
-        <p>DriverSync is developed by <strong>Pazzie</strong>. If you find this tool useful, consider giving it a star on <a href="https://github.com/cenodude/DriverSync" target="_blank">GitHub</a>!</p>
-    </div>
+        <section id="credits">
+            <h2>Credits</h2>
+            <p>DriverSync is developed by <strong>Pazzie</strong>. If you find this tool useful, consider giving it a star on <a href="https://github.com/cenodude/DriverSync" target="_blank">GitHub</a>!</p>
+        </section>
+    </main>
 
-    <footer>
+    <footer class="container">
         <p>&copy; 2025 DriverSync | <a href="https://github.com/cenodude/DriverSync" target="_blank">Visit us on GitHub</a></p>
     </footer>
 </body>
+
 </html>
