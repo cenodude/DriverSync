@@ -1,17 +1,19 @@
 
 ```
-██████╗ ██████╗ ██╗██╗   ██╗███████╗██████╗ ███████╗██╗   ██╗███╗   ██╗ ██████╗
-██╔══██╗██╔══██╗██║██║   ██║██╔════╝██╔══██╗██╔════╝╚██╗ ██╔╝████╗  ██║██╔════╝
-██║  ██║██████╔╝██║██║   ██║█████╗  ██████╔╝███████╗ ╚████╔╝ ██╔██╗ ██║██║     
-██║  ██║██╔══██╗██║╚██╗ ██╔╝██╔══╝  ██╔══██╗╚════██║  ╚██╔╝  ██║╚██╗██║██║     
-██████╔╝██║  ██║██║ ╚████╔╝ ███████╗██║  ██║███████║   ██║   ██║ ╚████║╚██████╗
-╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝  ╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═══╝ ╚═════╝
-                                                                                                                                                                                                          
+░▒▓███████▓▒░░▒▓███████▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓███████▓▒░ ░▒▓███████▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓███████▓▒░ ░▒▓██████▓▒░  
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ 
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        
+░▒▓█▓▒░░▒▓█▓▒░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒▒▓█▓▒░░▒▓██████▓▒░ ░▒▓███████▓▒░ ░▒▓██████▓▒░ ░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░ ░▒▓█▓▓█▓▒░ ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░ ░▒▓█▓▓█▓▒░ ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ 
+░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░  ░▒▓██▓▒░  ░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓███████▓▒░   ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░  
+                                                                                                                           
 ```  
 
 # DriverSync
 
-**DriverSync** is a Python-based application designed to synchronize driver data between **iOverlay** and **CrewChief**. It ensures seamless synchronization while maintaining data integrity. By syncing iOverlay with CrewChief, you gain both a visual and audible perspective on potentially problematic drivers.
+**DriverSync** is designed to synchronize driver data between **iOverlay** and **CrewChief**. It ensures seamless synchronization while maintaining data integrity. By syncing iOverlay with CrewChief, you gain both a visual and audible perspective on potentially problematic drivers.
+The tool also includes driver management, detailed reporting, showing you exactly what changes are made during each synchronization. From tracking drivers added or removed to analyzing synchronization deltas.
 
 ---
 
@@ -33,13 +35,13 @@ DriverSync is an independent, third-party tool not affiliated with or supported 
 > **Note**: The Windows executable was created using PyInstaller, which may cause antivirus programs to flag it as a threat. This is a false positive. Please whitelist the executable or consider using the Python version.
 
 ---
-
 ## **Features (GUI)** 
 - **DriverSync GUI and DriverSync CLI**: The GUI provides a user-friendly interface for configuring and managing synchronization interactively, while the DriverSync CLI offers a lightweight, command-line alternative for automation and integration into scripts or scheduled tasks.
 - **Synchronization Modes**:
   - **Additive Only**: Adds missing drivers without deleting existing data.
   - **Bidirectional**: Fully synchronizes data by adding missing drivers and removing obsolete ones.
 - **Update Existing Entries**: Keeps driver details (e.g., name or category) updated across systems.
+- **Driver Editor**: Edit or Create drivers and manage driver profiles.
 - **Category Filtering**: Synchronize drivers only from selected categories.
 - **Preview Mode**: See a detailed preview of synchronization changes before applying them.
 - **Backup Support**: Automatically creates backups of iOverlay and CrewChief files to prevent data loss.
@@ -144,5 +146,4 @@ python DriverSync_CLI.py --scheduler 2 --background
 ---
 
 ## **Credits**
-
 DriverSync is developed by **Pazzie**. If you find this tool useful, consider giving it a star on [GitHub](https://github.com/cenodude/DriverSync)!"
