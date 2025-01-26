@@ -12,30 +12,7 @@ In the General section of **iOverlay**, you can tag drivers under various catego
 DriverSync synchronizes these "dirty" driver lists between iOverlay and CrewChief. It:
 - Creates a new group in iOverlay named "CrewChief."
 - Automatically populates this group with synchronized drivers.
-- Updates CrewChief with tagged drivers from iOverlay.
-
----
-
-> ⚠️ **Important Note**:  
-> The Windows executable was created using PyInstaller, which may cause antivirus programs to flag it as a threat. This is a **false positive**.  
-> 
-> ### 🛡️ Recommended Steps:
-> - **Whitelist the Executable**: Add the DriverSync executable to your antivirus program's exclusion list to avoid interruptions.  
-> - **Verify Integrity**: If you downloaded DriverSync from the [official GitHub repository](https://github.com/cenodude/DriverSync), you can safely trust the file.  
-> - **Use the Python Version**: If you are concerned, consider using the Python source version for greater transparency.  
-
-## ⚠️ **Disclaimer**
-
-DriverSync is an independent, third-party tool not affiliated with or supported by iOverlay, CrewChief, or their respective owners. **Use it at your own risk.** No warranty is provided, and the author assumes no responsibility for any damages or issues arising from its use.
-
----
-
-## 📥 **Download Links**
-- 💾 **[DriverSync.v0.8.Python.zip](https://github.com/cenodude/DriverSync/releases/download/0.8/DriverSync.v0.8.Python.zip)**: Full Python source code for developers.
-- 🖥️ **[DriverSync.v0.8_Windows_Installer.zip](https://github.com/cenodude/DriverSync/releases/download/0.8/DriverSync.v0.8_Windows_Installer.zip)**: Windows installer (ZIP format).
-- 🖥️ **[DriverSync.v0.8_Windows_Installer.exe](https://github.com/cenodude/DriverSync/releases/download/0.8/DriverSync.v0.8_Windows_Installer.exe)**: Windows installer (Executable format).
-
----
+- Updates CrewChief with tagged drivers from iOverlay.  
 
 ## 🌟 **Features (GUI)** 
 - **Setup Wizard** The Setup Wizard guides you seamlessly through the entire process with a simple "Next, Next, Next" approach.
@@ -96,9 +73,30 @@ DriverSync_CLI provides several options for managing synchronization and backups
 - `--analytics`     Show analytics summary.
 ---
 
+## 📥 **Download Links**
+- 💾 **[DriverSync.v0.8.Python.zip](https://github.com/cenodude/DriverSync/releases/download/0.8/DriverSync.v0.8.Python.zip)**: Full Python source code for developers.
+- 🖥️ **[DriverSync.v0.8_Windows_Installer.zip](https://github.com/cenodude/DriverSync/releases/download/0.8/DriverSync.v0.8_Windows_Installer.zip)**: Windows installer (ZIP format).
+- 🖥️ **[DriverSync.v0.8_Windows_Installer.exe](https://github.com/cenodude/DriverSync/releases/download/0.8/DriverSync.v0.8_Windows_Installer.exe)**: Windows installer (Executable format).
+
+> ⚠️ **Important Note**:  
+> The Windows executable was created using PyInstaller, which may cause antivirus programs to flag it as a threat. This is a **false positive**.  
+> 
+> ### 🛡️ Recommended Steps:
+> - **Whitelist the Executable**: Add the DriverSync executable to your antivirus program's exclusion list to avoid interruptions.  
+> - **Verify Integrity**: If you downloaded DriverSync from the [official GitHub repository](https://github.com/cenodude/DriverSync), you can safely trust the file.  
+> - **Use the Python Version**: If you are concerned, consider using the Python source version for greater transparency.
 ## 🙌 **Credits**
 
+---
 DriverSync is developed by **Pazzie**. If you find this tool useful, consider giving it a star on [GitHub](https://github.com/cenodude/DriverSync)!  
 For questions or support, reach out via:
 - **Discord**: cenodude#2185
+
+---
+
+## ⚠️ **Disclaimer**
+
+DriverSync is an independent, third-party tool not affiliated with or supported by iOverlay, CrewChief, or their respective owners. **Use it at your own risk.** No warranty is provided, and the author assumes no responsibility for any damages or issues arising from its use.
+
+---
   
