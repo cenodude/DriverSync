@@ -2,6 +2,7 @@
 
 **DriverSync** is designed to synchronize driver data between **iOverlay** and **CrewChief**. It ensures seamless synchronization while maintaining data integrity. By syncing iOverlay with CrewChief, you gain both a visual and audible perspective on potentially problematic drivers.  
 The tool also includes driver management and detailed reporting, showing you exactly what changes are made during each synchronization. From tracking drivers added or removed to analyzing synchronization deltas.
+
 ---
 ## 🚀 **How It Works**
 
@@ -13,6 +14,7 @@ DriverSync synchronizes these "dirty" driver lists between iOverlay and CrewChie
 - Updates CrewChief with tagged drivers from iOverlay.
 
 ---
+
 > ⚠️ **Important Note**:  
 > The Windows executable was created using PyInstaller, which may cause antivirus programs to flag it as a threat. This is a **false positive**.  
 > 
@@ -24,7 +26,9 @@ DriverSync synchronizes these "dirty" driver lists between iOverlay and CrewChie
 ## ⚠️ **Disclaimer**
 
 DriverSync is an independent, third-party tool not affiliated with or supported by iOverlay, CrewChief, or their respective owners. **Use it at your own risk.** No warranty is provided, and the author assumes no responsibility for any damages or issues arising from its use.
+
 ---
+
 ## 📥 **Download Links**
 - 💾 **[DriverSync.v0.8.Python.zip](https://github.com/cenodude/DriverSync/releases/download/0.8/DriverSync.v0.8.Python.zip)**: Full Python source code for developers.
 - 🖥️ **[DriverSync.v0.8_Windows_Installer.zip](https://github.com/cenodude/DriverSync/releases/download/0.8/DriverSync.v0.8_Windows_Installer.zip)**: Windows installer (ZIP format).
@@ -45,10 +49,13 @@ DriverSync is an independent, third-party tool not affiliated with or supported 
 - **Backup Support**: Automatically creates backups of iOverlay and CrewChief files to prevent data loss.
 - **Scheduling**: Automate your synchronization to run every X hours.
 - **Delta Reporting**: Displays a summary of synchronization actions, including drivers added, deleted, and total counts.
+
 ---
+
 ## 📌 **Prerequisites**
 CrewChief v4 must be installed and launched at least once.
 iOverlay must be installed and launched at least once.
+
 ---
 
 ## 📜 **Sync Behavior**
@@ -89,6 +96,8 @@ DriverSync_CLI provides several options for managing synchronization and backups
 ---
 
 ## 🙌 **Credits**
+
 DriverSync is developed by **Pazzie**. If you find this tool useful, consider giving it a star on [GitHub](https://github.com/cenodude/DriverSync)!  
 For questions or support, reach out via:
 - **Discord**: cenodude#2185
+  
