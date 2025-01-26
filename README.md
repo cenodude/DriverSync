@@ -38,6 +38,7 @@ iOverlay must be installed and launched at least once. For full functionality, *
 - **Step 2**: Start iRacing with Crewchief and Instruct Jim (CrewChief) to "mark the driver [ahead/behind] as dirty.
 
 That’s it! Now this driver is synced with iOverlay, complete with a glaring heads-up (standings/relative overlays) and a friendly shout that they’re flagged as dirty/sketchy. Best of all, no more manual adding drivers
+
 ---
 
 ## 📜 **Sync Behavior**
