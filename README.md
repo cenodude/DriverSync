@@ -30,10 +30,14 @@ DriverSync synchronizes these "dirty" driver lists between iOverlay and CrewChie
 
 ---
 
-## 📌 **Prerequisites**
-CrewChief v4 must be installed and launched at least once.
-iOverlay must be installed and launched at least once.
+## 📌 Prerequisites and how it works
+CrewChief v4 must be installed and launched at least once.  
+iOverlay must be installed and launched at least once. For full functionality, *a subscription is recommended*.
 
+- **Step 1**: Configure your settings in DriverSync. The default options work just fine, but if you’re feeling adventurous, go wild and tweak away!
+- **Step 2**: Start iRacing with Crewchief and Instruct Jim (CrewChief) to "mark the driver [ahead/behind] as dirty.
+
+That’s it! Now this driver is synced with iOverlay, complete with a glaring heads-up (standings/relative overlays) and a friendly shout that they’re flagged as dirty/sketchy. Best of all, no more manual adding drivers
 ---
 
 ## 📜 **Sync Behavior**
@@ -80,11 +84,7 @@ DriverSync_CLI provides several options for managing synchronization and backups
 
 > ⚠️ **Important Note**:  
 > The Windows executable was created using PyInstaller, which may cause antivirus programs to flag it as a threat. This is a **false positive**.  
-> 
-> ### 🛡️ Recommended Steps:
-> - **Whitelist the Executable**: Add the DriverSync executable to your antivirus program's exclusion list to avoid interruptions.  
-> - **Verify Integrity**: If you downloaded DriverSync from the [official GitHub repository](https://github.com/cenodude/DriverSync), you can safely trust the file.  
-> - **Use the Python Version**: If you are concerned, consider using the Python source version for greater transparency.
+
 ## 🙌 **Credits**
 
 ---
