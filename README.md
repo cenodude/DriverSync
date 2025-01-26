@@ -1,11 +1,9 @@
-# DriverSync
+# DriverSync Latest Version 0.8
 
-**DriverSync** is designed to synchronize driver data between **iOverlay** and **CrewChief**. It ensures seamless synchronization while maintaining data integrity. By syncing iOverlay with CrewChief, you gain both a visual and audible perspective on potentially problematic drivers.
-The tool also includes driver management, detailed reporting, showing you exactly what changes are made during each synchronization. From tracking drivers added or removed to analyzing synchronization deltas.
-
+**DriverSync** is designed to synchronize driver data between **iOverlay** and **CrewChief**. It ensures seamless synchronization while maintaining data integrity. By syncing iOverlay with CrewChief, you gain both a visual and audible perspective on potentially problematic drivers.  
+The tool also includes driver management and detailed reporting, showing you exactly what changes are made during each synchronization. From tracking drivers added or removed to analyzing synchronization deltas.
 ---
-
-## **How It Works**
+## 🚀 **How It Works**
 
 In the General section of **iOverlay**, you can tag drivers under various categories such as "friends" or "dirty drivers." Similarly, **CrewChief** allows marking drivers as "dirty," letting you instruct Jim (CrewChief) to "mark the driver [ahead/behind] as dirty."
 
@@ -15,29 +13,45 @@ DriverSync synchronizes these "dirty" driver lists between iOverlay and CrewChie
 - Updates CrewChief with tagged drivers from iOverlay.
 
 ---
+> ⚠️ **Important Note**:  
+> The Windows executable was created using PyInstaller, which may cause antivirus programs to flag it as a threat. This is a **false positive**.  
+> 
+> ### 🛡️ Recommended Steps:
+> - **Whitelist the Executable**: Add the DriverSync executable to your antivirus program's exclusion list to avoid interruptions.  
+> - **Verify Integrity**: If you downloaded DriverSync from the [official GitHub repository](https://github.com/cenodude/DriverSync), you can safely trust the file.  
+> - **Use the Python Version**: If you are concerned, consider using the Python source version for greater transparency.  
 
-## **Disclaimer**
+## ⚠️ **Disclaimer**
 
-DriverSync is an independent, third-party tool not affiliated with or supported by iOverlay, CrewChief, or their respective owners. Use it at your own risk. No warranty is provided, and the author assumes no responsibility for any damages or issues arising from its use.
-
-> **Note**: The Windows executable was created using PyInstaller, which may cause antivirus programs to flag it as a threat. This is a false positive. Please whitelist the executable or consider using the Python version.
+DriverSync is an independent, third-party tool not affiliated with or supported by iOverlay, CrewChief, or their respective owners. **Use it at your own risk.** No warranty is provided, and the author assumes no responsibility for any damages or issues arising from its use.
+---
+## 📥 **Download Links**
+- 💾 **[DriverSync.v0.8.Python.zip](https://github.com/cenodude/DriverSync/releases/download/0.8/DriverSync.v0.8.Python.zip)**: Full Python source code for developers.
+- 🖥️ **[DriverSync.v0.8_Windows_Installer.zip](https://github.com/cenodude/DriverSync/releases/download/0.8/DriverSync.v0.8_Windows_Installer.zip)**: Windows installer (ZIP format).
+- 🖥️ **[DriverSync.v0.8_Windows_Installer.exe](https://github.com/cenodude/DriverSync/releases/download/0.8/DriverSync.v0.8_Windows_Installer.exe)**: Windows installer (Executable format).
 
 ---
-## **Features (GUI)** 
-- **DriverSync GUI and DriverSync CLI**: The GUI provides a user-friendly interface for configuring and managing synchronization interactively, while the DriverSync CLI offers a lightweight, command-line alternative for automation and integration into scripts or scheduled tasks.
+
+## 🌟 **Features (GUI)** 
+- **Setup Wizard** The Setup Wizard guides you seamlessly through the entire process with a simple "Next, Next, Next" approach.
+- **DriverSync GUI and DriverSync CLI**: Choose between a user-friendly interface or command-line tools for automation.
 - **Synchronization Modes**:
   - **Additive Only**: Adds missing drivers without deleting existing data.
   - **Bidirectional**: Fully synchronizes data by adding missing drivers and removing obsolete ones.
 - **Update Existing Entries**: Keeps driver details (e.g., name or category) updated across systems.
-- **Driver Editor**: Edit or Create drivers and manage driver profiles.
-- **Category Filtering**: Synchronize drivers only from selected categories.
+- **Driver and Group Editor**: Edit, add drivers and groups.
+- **Reputations Settings**: change iRacing Safety ratings, enable Club Reputations, Club Manager and editor
 - **Preview Mode**: See a detailed preview of synchronization changes before applying them.
 - **Backup Support**: Automatically creates backups of iOverlay and CrewChief files to prevent data loss.
+- **Scheduling**: Automate your synchronization to run every X hours.
 - **Delta Reporting**: Displays a summary of synchronization actions, including drivers added, deleted, and total counts.
-
+---
+## 📌 **Prerequisites**
+CrewChief v4 must be installed and launched at least once.
+iOverlay must be installed and launched at least once.
 ---
 
-## **Sync Behavior**
+## 📜 **Sync Behavior**
 
 The `sync_behavior` configuration controls how synchronization handles additions and deletions:
 
@@ -49,65 +63,19 @@ The `sync_behavior` configuration controls how synchronization handles additions
 | Fully synchronize both systems, including updates.     | ❌                 | ✅                 | ✅                          |
 | Avoid data loss by preserving existing driver details. | ✅                 | ✅                 | ❌                          |
 
----
 
-## **Examples**
-1. **Additive Only with `update_existing_entries`:**
-   - Drivers are only added between systems.
-   - Existing driver details are synchronized (e.g., name corrections).
-
-2. **Bidirectional Without `update_existing_entries`:**
-   - Drivers are added or deleted as needed.
-   - No updates to existing driver details.
-
-3. **Bidirectional with `update_existing_entries`:**
-   - Adds and deletes drivers as needed.
-   - Updates details for drivers already present in both systems.
-
----
-
-## **Prerequisites**
-- **Python Version**:
-  - Python 3.8+
-  - Required modules: `PyQt5, requests, schedule`
-- **Windows Executable**:
-  - Place the executable in a dedicated folder.
-
----
-
-## **Installation for DriverSync (Python Version)**
-
-1. Install Python from the [official site](http://www.python.org/downloads) or the Microsoft Store.
-2. Install required modules:
-   ```bash
-   pip install PyQt5 requests schedule
-   ```
-
----
-
-## **Usage Instructions**
-
-### Running the Python Version
-```bash
-python DriverSync.py                   # GUI mode
-python DriverSync.py --run             # Silent mode
-python DriverSync.py --background      # Background mode (systray)
-python DriverSync.py --reset           # Reset all settings, stats, and logs
-python DriverSync.py --help            # Show help information
-```
+## ▶️ **Usage Instructions**
 
 ### Running the Windows Executable
 ```bash
-DriverSync.exe                          # GUI mode
-DriverSync.exe --run                    # Silent mode
-DriverSync.exe --background-process     # Background mode (systray)
+DriverSync.exe                          # GUI mode  <-- use this for most users
+DriverSync_CLI.exe                      # CLI mode
 ```
 
 Once you’ve completed the initial GUI configuration, you can run DriverSync in silent or background mode. Alternatively, use `DriverSync_CLI` for integration into automation scripts or cron jobs.
 
 ---
-
-## **DriverSync_CLI Command-Line Arguments**
+## 🖥️ **DriverSync_CLI Command-Line Arguments**
 
 DriverSync_CLI provides several options for managing synchronization and backups:
 - `--sync`          Perform synchronization based on `config.json`.
@@ -118,20 +86,9 @@ DriverSync_CLI provides several options for managing synchronization and backups
 - `--background`    Run the script in the background (used with `--scheduler`).
 - `--reset`         Reset the application.
 - `--analytics`     Show analytics summary.
-
-Example:
-```bash
-# Perform synchronization
-python DriverSync_CLI.py --sync
-
-# Preview changes
-python DriverSync_CLI.py --preview
-
-# Schedule synchronization every 2 hours in the background
-python DriverSync_CLI.py --scheduler 2 --background
-```
-
 ---
 
-## **Credits**
-DriverSync is developed by **Pazzie**. If you find this tool useful, consider giving it a star on [GitHub](https://github.com/cenodude/DriverSync)!"
+## 🙌 **Credits**
+DriverSync is developed by **Pazzie**. If you find this tool useful, consider giving it a star on [GitHub](https://github.com/cenodude/DriverSync)!  
+For questions or support, reach out via:
+- **Discord**: cenodude#2185
