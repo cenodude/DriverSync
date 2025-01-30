@@ -1,11 +1,11 @@
-import csv
+﻿import csv
 
 from PyQt5.QtWidgets import (
     QVBoxLayout, QHBoxLayout, QWidget, QTableWidget, QTableWidgetItem,
-    QPushButton, QLineEdit, QComboBox, QHeaderView, QFileDialog, QLabel
+    QPushButton, QLineEdit, QComboBox, QHeaderView, QFileDialog, QLabel, 
 )
 from PyQt5.QtCore import Qt, QTimer
-from PyQt5.QtGui import QColor
+from PyQt5.QtGui import QColor, QBrush, QLinearGradient, QPalette
 
 class LogDashboard(QWidget):
     def __init__(self):
@@ -26,6 +26,37 @@ class LogDashboard(QWidget):
         self.log_table.setEditTriggers(QTableWidget.NoEditTriggers)
         self.log_table.verticalHeader().setDefaultSectionSize(20)  # Set compact row height
         self.main_layout.addWidget(self.log_table)
+
+        # Apply gradient to the log table
+        gradient = QLinearGradient(0, 0, 0, self.log_table.height())
+        gradient.setColorAt(0.0, QColor(255, 255, 255))  # White
+        gradient.setColorAt(1.0, QColor(230, 230, 230))  # Light Grey
+
+        palette = QPalette()
+        palette.setBrush(QPalette.Base, QBrush(gradient))
+        self.log_table.setPalette(palette)
+
+        # Style adjustments to make grid lines grey and table more embedded
+        self.log_table.setGridStyle(Qt.SolidLine)
+        self.log_table.setStyleSheet("""
+            QTableWidget {
+                background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                            stop:0 white, stop:1 #e6e6e6);
+                border: none;
+                gridline-color: #D3D3D3; /* Light grey grid lines */
+                alternate-background-color: #F8F8F8; /* Slightly off-white for contrast */
+            }
+            QHeaderView::section {
+                background-color: #EAEAEA; /* Light grey header */
+                border: none;
+                padding: 4px;
+            }
+            QTableWidget::item {
+                border-bottom: 1px solid #E0E0E0; /* Soft embedded row separation */
+                padding: 5px;
+            }
+        """)
+
 
         # Control Panel
         self.control_panel = QHBoxLayout()
@@ -74,8 +105,8 @@ class LogDashboard(QWidget):
         self.refresh_log_table()
 
     def refresh_log_table(self):
-        """Refresh the log table to display logs."""
-        self.log_table.setUpdatesEnabled(False)  # Temporarily disable updates for performance
+        """Refresh the log table to display logs with rounded labels for log levels."""
+        self.log_table.setUpdatesEnabled(False)
         current_scroll_value = self.log_table.verticalScrollBar().value()
         max_scroll_value = self.log_table.verticalScrollBar().maximum()
 
@@ -85,18 +116,62 @@ class LogDashboard(QWidget):
                 row_position = self.log_table.rowCount()
                 self.log_table.insertRow(row_position)
 
-                # Set level with color coding
-                level_item = QTableWidgetItem(log["level"])
-                level_color = self.get_level_color(log["level"])
-                level_item.setForeground(level_color)
-                self.log_table.setItem(row_position, 0, level_item)
+                # Set log level as a styled label
+                level_widget = self.create_level_label(log["level"])
+                self.log_table.setCellWidget(row_position, 0, level_widget)
 
                 # Set message
                 self.log_table.setItem(row_position, 1, QTableWidgetItem(log["message"]))
 
-        self.log_table.setUpdatesEnabled(True)  # Re-enable updates
-        if current_scroll_value == max_scroll_value:  # If already scrolled to the bottom
-            self.log_table.scrollToBottom()  # Keep it scrolled
+                # Set row height for each row
+                self.log_table.setRowHeight(row_position, 30)  # Adjust height as needed
+
+        self.log_table.horizontalHeader().setSectionResizeMode(0, QHeaderView.Fixed) 
+        self.log_table.setColumnWidth(0, 120)  # Width for level column
+        self.log_table.horizontalHeader().setSectionResizeMode(1, QHeaderView.Stretch)  # Stretch message column
+
+        self.log_table.verticalHeader().setDefaultSectionSize(30)  # Height for each row
+
+        self.log_table.setUpdatesEnabled(True)
+        if current_scroll_value == max_scroll_value:
+            self.log_table.scrollToBottom()
+
+
+
+    def create_level_label(self, level):
+        """Create a rounded QLabel for log levels with colored backgrounds."""
+        label = QLabel(level)
+        label.setAlignment(Qt.AlignCenter)
+        label.setFixedSize(80, 25)  # Adjust label size
+        label.setStyleSheet(f"""
+            QLabel {{
+                background-color: {self.get_level_background(level)};
+                color: white;
+                font-weight: bold;
+                border-radius: 12px;
+                padding: 4px;
+            }}
+        """)
+
+        widget = QWidget()
+        layout = QHBoxLayout(widget)
+        layout.addWidget(label)
+        layout.setContentsMargins(0, 0, 0, 0)
+        layout.setAlignment(Qt.AlignCenter)
+        widget.setLayout(layout)
+
+        return widget
+
+    def get_level_background(self, level):
+        """Return the appropriate background color for the log level."""
+        colors = {
+            "Info": "#3498db",    # Blue
+            "Success": "#2ecc71", # Green
+            "Warning": "#f39c12", # Orange
+            "Error": "#e74c3c"    # Red
+        }
+        return colors.get(level, "#95a5a6")  # Default: Grey
+
 
     def get_level_color(self, level):
         """Return the appropriate color for the log level."""

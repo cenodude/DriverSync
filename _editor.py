@@ -10,7 +10,7 @@ from PyQt5.QtWidgets import (
     QListWidgetItem, QAbstractItemView, QInputDialog, QTextBrowser
 )
 from PyQt5.QtCore import Qt, pyqtSignal, QTimer, QRectF
-from PyQt5.QtGui import QPainter, QColor, QBrush, QFont
+from PyQt5.QtGui import QPainter, QColor, QBrush, QFont, QLinearGradient, QPalette
 
 from datetime import datetime
 from _logging import log_to_gui
@@ -448,17 +448,50 @@ class Editor(QWidget):
         # Drivers Table
         self.drivers_table = QTableWidget(0, 5)
         self.update_drivers_table_headers()
-        self.drivers_table.verticalHeader().setDefaultSectionSize(35)
+        self.drivers_table.verticalHeader().setDefaultSectionSize(45)
         self.drivers_table.setContextMenuPolicy(Qt.CustomContextMenu)
         self.drivers_table.customContextMenuRequested.connect(self.show_context_menu)
-   
+
         # Connect signals to detect grid changes
         self.drivers_table.itemChanged.connect(self.on_grid_modified)
 
         # Connect signals for iRacing ID validation
         self.drivers_table.cellChanged.connect(self.validate_iracing_id)
 
+        # Apply gradient background & soft embedded grid lines
+        gradient = QLinearGradient(0, 0, 0, self.drivers_table.height())
+        gradient.setColorAt(0.0, QColor(255, 255, 255))  # White
+        gradient.setColorAt(1.0, QColor(240, 240, 240))  # Soft Grey
+
+        palette = QPalette()
+        palette.setBrush(QPalette.Base, QBrush(gradient))
+        self.drivers_table.setPalette(palette)
+
+        # Soft grey grid lines and embedded row separators
+        self.drivers_table.setStyleSheet("""
+            QTableWidget {
+                background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                            stop:0 white, stop:1 #f0f0f0);
+                border: none;
+                gridline-color: #D3D3D3; /* Light grey grid lines */
+                alternate-background-color: #FAFAFA; /* Slightly off-white for contrast */
+            }
+            QHeaderView::section {
+                background-color: #EAEAEA; /* Light grey header */
+                border: none;
+                padding: 4px;
+            }
+            QTableWidget::item {
+                border-bottom: 1px solid #E0E0E0; /* Soft embedded row separation */
+                padding: 5px;
+            }
+        """)
+
+        # Add table to layout
         layout.addWidget(self.drivers_table)
+
+        self.setLayout(layout)  # Set the layout for the widget
+
 
         # Add the blinking timer
         self.blink_timer = QTimer(self)
@@ -584,22 +617,36 @@ class Editor(QWidget):
         self.start_save_button_blink()
 
     def validate_iracing_id(self, row, column):
-        """Validate the iRacing ID field in real-time."""
-        if column == 1:  # Check only the iRacing ID column
+        if column == 1:  
             id_item = self.drivers_table.item(row, column)
             if not id_item:
                 return
 
             id_text = id_item.text().strip()
-            # Validate ID: Numeric and 5-8 digits long
-            if not id_text.isdigit() or not (5 <= len(id_text) <= 8):
-                id_item.setBackground(QColor("#FFCCCC"))  # Highlight invalid input in red
-                id_item.setToolTip("iRacing ID must be numeric and 5-8 digits.")
-                self.save_button.setEnabled(False)  # Disable save button if invalid
+
+            if self.drivers_table.item(row, 2):
+                font = self.drivers_table.item(row, 2).font()
             else:
-                id_item.setBackground(QColor("#FFFFFF"))  # Reset to default for valid input
+                font = QFont("Arial", 10)
+
+            if not id_text.isdigit() or not (5 <= len(id_text) <= 8):
+                font.setBold(True)  
+                id_item.setFont(font)  
+                id_item.setForeground(QColor(255, 0, 0))  
+                id_item.setToolTip("Invalid! iRacing ID must be numeric and between 5 and 8 digits.")
+
+                self.save_button.setEnabled(False)  
+                self.stop_save_button_blink()  
+            else:
+                font.setBold(False)  
+                id_item.setFont(font)  
+                id_item.setForeground(QColor(0, 0, 0))  
                 id_item.setToolTip("")
-                self.check_all_ids_valid()
+
+                self.check_all_ids_valid()  
+
+            self.drivers_table.viewport().update()
+
 
     def check_all_ids_valid(self):
         """
