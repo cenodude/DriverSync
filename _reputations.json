@@ -1,0 +1,49 @@
+{
+    "clubs": {
+        "World": [
+            "Africa/South Africa",
+            "Asia",
+            "Australia/NZ",
+            "Brazil",
+            "Canada",
+            "Central-Eastern Europe",
+            "Finland",
+            "Hispanoam\u00e9rica",
+            "Iberia",
+            "International Club",
+            "Japan",
+            "Mexico",
+            "Scandinavia",
+            "UK and I"
+        ],
+        "Europe": [
+            "Benelux",
+            "DE-AT-CH",
+            "France",
+            "Italy",
+            "Spain"
+        ],
+        "US": [
+            "Atlantic",
+            "California Club",
+            "Carolina",
+            "Florida",
+            "Georgia",
+            "Great Plains",
+            "Illinois",
+            "Indiana",
+            "Michigan",
+            "Mid-South",
+            "Midwest",
+            "New England",
+            "New Jersey",
+            "New York",
+            "Northwest",
+            "Ohio",
+            "Pennsylvania",
+            "Texas",
+            "Virginias",
+            "West"
+        ]
+    }
+}

@@ -1,0 +1,178 @@
+/* General Window Styling */
+QMainWindow {
+    background: qlineargradient( x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #ffffff, stop: 0.5 #e7f1ff, stop: 1 #cce7ff );
+    color: #000000;
+    border: 1px solid #d9e2ec;
+    border-radius: 10px;
+}
+/* Label Styling */
+QLabel {
+    color: black; /* Consistent label color */
+}
+QLabel#explanationLabel {
+    font-size: 12px;
+    color: #666666;
+}
+/* Wizard Styling */
+QWizard {
+    background: qlineargradient( x1: 0, y1: 0, x2: 1, y2: 1, stop: 0 #f0f4f8, stop: 0.5 #d9e2ec, stop: 1 #b3c7d6 );
+    border: 1px solid #a0b4c8;
+    border-radius: 10px;
+}
+/* Button Styling */
+QPushButton {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 2px solid #3e3e3e;
+    border-radius: 12px; /* Adjusted radius for rounded buttons */
+    padding: 12px 25px; /* Larger padding for bigger buttons */
+    font-size: 16px; /* Slightly increased font size */
+    font-weight: bold; /* Make text bold */
+} QPushButton:hover {
+        background-color: #333333;
+        color: white;
+    } QPushButton:pressed {
+        background-color: #555555;
+        color: white;
+    } QPushButton:disabled {
+        background-color: #3e3e3e;
+        color: #808080;
+    }
+/* Action Buttons */
+QPushButton#actionButton {
+        font-weight: bold; /* Use existing button styles with bold font */
+    }
+/* Toggle Button Styles */
+#sourceToggle {
+    background-color: #FFA500; /* Default to iOverlay (Orange) */
+    color: white;
+    border: 2px solid #FF8C00;
+    border-radius: 20px; /* Rounded corners for toggle */
+    font-weight: bold;
+    text-align: center;
+    padding: 10px; /* Consistent padding */
+    font-size: 16px; /* Increase size for better visibility */
+} #sourceToggle:checked {
+        background-color: #00BFFF; /* CrewChief (Light Blue) */
+        border-color: #007ACC;
+    } #sourceToggle:hover {
+        opacity: 0.9;
+    }
+/* Checkbox Styling */
+.checkbox {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+/* Color Button Styling */
+.colorButton {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    border: 1px solid #444;
+} .colorButton:hover {
+        border: 1px solid #222;
+    } colorButton:pressed {
+    border: 1px solid #000;
+}
+/* ScrollBar Styling */
+QScrollBar:vertical, QScrollBar:horizontal {
+    background: #f0f0f0; /* Lighter background for consistency */
+    border: 1px solid #cccccc;
+    width: 10px; /* Adjusted width */
+    height: 10px; /* Adjusted height */
+} QScrollBar::handle {
+    background: #888888; /* Medium gray for handle */
+    border-radius: 5px;
+} QScrollBar::handle:hover {
+        background: #555555; /* Darker hover effect */
+    } QScrollBar::add-line, QScrollBar::sub-line {
+    background: none;
+    border: none;
+}
+/* Menu Bar Styling */
+QMenuBar {
+    background-color: #f0f0f0;
+    color: #000000;
+    border: 1px solid #cccccc;
+    padding: 5px;
+} QMenuBar::item {
+        background-color: transparent;
+        color: #000000;
+        padding: 8px 15px; /* Increased padding for better spacing */
+        border-radius: 8px;
+    } QMenuBar::item:selected {
+            background-color: #cccccc;
+            color: #000000;
+        }
+/* Menu Styling */
+QMenu {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #cccccc;
+    padding: 8px; /* Adjusted padding for better usability */
+} QMenu::item {
+        background-color: transparent;
+        color: #000000;
+        padding: 8px 20px; /* Adjusted padding */
+        border-radius: 8px;
+    } QMenu::item:selected {
+            background-color: rgba(200, 200, 200, 0.8);
+            color: #000000;
+        }
+/* Progress Bar Styling */
+QProgressBar {
+    border: 2px solid #cccccc;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    text-align: center;
+    color: black;
+    padding: 5px; /* Increased padding */
+} QProgressBar::chunk {
+        background-color: #4caf50;
+        border-radius: 8px;
+    }
+/* ComboBox Styling */
+QComboBox {
+    background-color: white;
+    color: black;
+    border: 1px solid #cccccc;
+    padding: 8px; /* Increased padding */
+    border-radius: 8px; /* Consistent rounding */
+} QComboBox QAbstractItemView {
+        background-color: white;
+        color: black;
+        selection-background-color: #4caf50;
+        selection-color: black;
+    }
+/* Tooltip Styling */
+QToolTip {
+    background-color: #333333;
+    color: white;
+    border: 1px solid #555555;
+    border-radius: 8px;
+    padding: 10px;
+} QTabBar::tab {
+    background: white;
+    color: black;
+    border: 1px solid gray;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: none;
+    padding: 8px 20px;
+    margin-left: 4px;
+    margin-right: 4px;
+    min-width: 120px;
+    font-size: 16px; /* Increased size for better readability */
+} QTabBar::tab:selected {
+        background: green;
+        color: white;
+        border: 1px solid darkgreen;
+        border-bottom: none;
+        font-weight: bold;
+    } QTabBar::tab:hover {
+        background: qlineargradient( x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #E6F7FF, stop: 1 #DCE6F0 );
+        color: black;
+    } QTabWidget::pane {
+    border: 1px solid gray;
+    margin: -1px;
+}

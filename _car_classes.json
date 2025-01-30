@@ -1,0 +1,64 @@
+{
+    "None": [
+        ""
+    ],
+    "NASCAR": [
+        "NASCAR Cup Series",
+        "NASCAR Xfinity Series",
+        "NASCAR Craftsman Truck Series",
+        "NASCAR Classic 1987 Cars",
+        "NASCAR Whelen Modified Tour",
+        "ARCA Menards Series"
+    ],
+    "Open-Wheel Cars": [
+        "Formula Vee",
+        "USF 2000",
+        "Indy Pro 2000",
+        "Dallara F3",
+        "Dallara IR18 (IndyCar)",
+        "Dallara iR-01",
+        "McLaren MP4-30 (Formula 1)",
+        "Mercedes-AMG W12 E Performance (Formula 1)"
+    ],
+    "GT Cars": [
+        "GT1 Class",
+        "GT3 Class",
+        "GT4 Class",
+        "GTE Class"
+    ],
+    "Prototype Cars": [
+        "LMP1 Class",
+        "LMP2 Class",
+        "LMP3 Class",
+        "GTP Class"
+    ],
+    "Touring Cars": [
+        "TCR Class",
+        "Renault Clio R.S V Cup"
+    ],
+    "Dirt Oval Cars": [
+        "Dirt Street Stock",
+        "Dirt Late Models (Limited, Pro, Super)",
+        "Dirt UMP Modified",
+        "Dirt Midget",
+        "Dirt Sprint Cars (305, 360, 410)"
+    ],
+    "Rallycross Cars": [
+        "VW Beetle",
+        "Subaru WRX STI",
+        "Ford Fiesta RS WRC"
+    ],
+    "Off-Road Trucks": [
+        "Lucas Oil Off Road Pro 2 Lite Truck",
+        "Lucas Oil Off Road Pro 2 Truck",
+        "Lucas Oil Off Road Pro 4 Truck"
+    ],
+    "Miscellaneous/Other Cars": [
+        "Legends Ford '34 Coupe",
+        "Street Stock",
+        "SCCA Spec Racer Ford",
+        "Radical SR8 V8",
+        "Mazda MX-5 Cup",
+        "Toyota GR86"
+    ]
+}
